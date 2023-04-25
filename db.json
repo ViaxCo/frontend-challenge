@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Hoya",
+      "lastName":"Kerri",
+      "walletBalance": 400000
+    },
+    {
+      "id": 2,
+      "firstName": "Abc",
+      "lastName":"Def",
+      "walletBalance": 100000
+    },
+    {
+      "id": 3,
+      "firstName": "Layi",
+      "lastName":"Wasabi",
+      "walletBalance": 670000
+    }
+  ]
+}
