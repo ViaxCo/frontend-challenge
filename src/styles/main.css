@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 :root {
-  --green: #6fcf97;
-  --white: #f5f5f5;
+  --deyork: #6fcf97;
+  --wild-sand: #f5f5f5;
+  --white: #ffffff;
   --active-text: #101010;
   --user-text: #747474;
-  --modal-background:rgba(0, 0, 0, 0.1);
+  --modal-background: rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -13,4 +14,75 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: var(--wild-sand);
+  margin-top: 200px;
+  height: 100%;
+}
+
+.box {
+  background-color: var(--white);
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  width: 287px;
+  height: 208px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  box-shadow: 0px 20px 24px -4px rgba(16, 40, 18, 0.08),
+    0px 8px 8px -4px rgba(16, 24, 40, 0.03);
+}
+
+.circle {
+  height: 30px;
+  width: 30px;
+  background-color: var(--wild-sand);
+  border-radius: 50%;
+}
+
+.box-section {
+  display: flex;
+}
+
+.modal {
+  height: 1024px;
+  padding: 20px 32px;
+  background-color: var(--white);
+}
+
+.input-box {
+  margin-top: 88px;
+}
+
+.text-box {
+  width: 456px;
+  padding: 10px;
+}
+
+.modal-button {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (orientation: portrait) {
+  body {
+    margin-top: 40px;
+    height: 100%;
+  }
+
+  .box {
+    background-color: var(--white);
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    width: 448px;
+    height: 72px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+  }
 }

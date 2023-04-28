@@ -6,17 +6,22 @@ const User = () => {
   const [showButtons, setShowButtons] = useState(false);
   const handleClick = () => setShowButtons((toggle) => !toggle);
   return (
-    <div>
-      <h4>Firstname Lastname</h4>
-      <h4>400,000</h4>
-      <span>
-        <MobileMenu onClick={handleClick} />
-        {showButtons ? (
-          <>
-            <Button title="Deposit" /> <Button title="Withdrawal" />
-          </>
-        ) : null}
-      </span>
+    <div className="box">
+      <div className="box-section">
+        {/* <div className="circle"></div>
+        <h4>Fname Lname</h4> */}
+      </div>
+      <div className="box-section">
+        {/* <h4>400,000</h4>
+        <span>
+          <MobileMenu onClick={handleClick} />
+          {showButtons ? (
+            <>
+              <Button title="Deposit" /> <Button title="Withdrawal" />
+            </>
+          ) : null}
+        </span> */}
+      </div>
     </div>
   );
 };

@@ -5,6 +5,8 @@ const Users = () => {
   return (
     <div>
       <User />
+      <User />
+      <User />
     </div>
   );
 };

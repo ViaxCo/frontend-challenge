@@ -3,15 +3,21 @@ import { ReactComponent as CloseButton } from '../assets/images/close-button.svg
 import Input from './Input';
 import Button from './Button';
 
-const ModalBase = () => {
+const Modal = () => {
   return (
-    <div>
-      <span>Deposit/Withdraw to/from wallet</span>
-      <CloseButton />
-      <Input label="Amount" />
-      <Button title="Deposit/Withdraw" />
+    <div className="modal">
+      <div className="">
+        <h4>Deposit/Withdraw to/from wallet</h4>
+        <CloseButton />
+      </div>
+      <div className="input-box">
+        <Input label="Amount" />
+      </div>
+      <div className="modal-button">
+        <Button title="Deposit/Withdraw" />
+      </div>
     </div>
   );
 };
 
-export default ModalBase;
+export default Modal;
