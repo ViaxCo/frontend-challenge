@@ -1,20 +1,24 @@
-import React from 'react';
 import { ReactComponent as CloseButton } from '../assets/images/close-button.svg';
 import Input from './Input';
 import Button from './Button';
+import { useState } from 'react';
 
-const Modal = () => {
+const Modal = ({ action, setShowModal, userData }) => {
+  const [openModal, setOpenModal] = useState(true);
   return (
     <div className="modal">
       <div className="">
-        <h4>Deposit/Withdraw to/from wallet</h4>
-        <CloseButton />
+        <h4>
+          {action}
+          <span className='ml-1'>{action === 'Deposit' ? 'to' : 'from'}</span> wallet
+        </h4>
+        <CloseButton onClick={() => setShowModal(!openModal)} />
       </div>
       <div className="input-box">
         <Input label="Amount" />
       </div>
       <div className="modal-button">
-        <Button title="Deposit/Withdraw" />
+        <button onClick={() => setShowModal(false)}>{action}</button>
       </div>
     </div>
   );

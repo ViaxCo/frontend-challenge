@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap');
 
 :root {
   --deyork: #6fcf97;
@@ -17,9 +17,8 @@
 }
 
 body {
+  position: relative;
   background-color: var(--wild-sand);
-  margin-top: 200px;
-  height: 100%;
 }
 
 .flex {
@@ -44,6 +43,37 @@ body {
 
 .w-full {
   width: 100%;
+}
+.mx-3 {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+
+.ml-1 {
+  margin-left: 0.25rem;
+}
+
+.user {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.walletBalance {
+  font-weight: 600;
+  color: var(--deyork);
+}
+
+.modal {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 4;
+  width: 100vw;
+  padding: 20px 32px;
+  /* background-color: var(--deyork); */
 }
 
 .box {
@@ -71,7 +101,8 @@ body {
 }
 
 .modal {
-  height: 1024px;
+  height: 100vh;
+  width: screen;
   padding: 20px 32px;
   background-color: var(--white);
 }
@@ -91,14 +122,9 @@ body {
 }
 
 @media only screen and (orientation: portrait) {
-  body {
-    margin-top: 40px;
-    height: 100%;
-  }
-
   .box {
     background-color: var(--white);
-    padding: 10px;
+    padding: 5px 10px;
     display: flex;
     width: 95%;
     border-radius: 8px;
@@ -106,5 +132,17 @@ body {
     justify-content: space-between;
     height: 72px;
     border-radius: 8px;
+  }
+  .modal {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 4;
+    width: 100vw;
+    padding: 20px 32px;
+    /* background-color: var(--deyork); */
   }
 }

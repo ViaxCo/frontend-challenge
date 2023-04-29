@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Modal from './Modal';
 
-const Button = ({ title }) => {
+const Button = ({ title, setShowModal, handleChildClick }) => {
+  const [openModal, setOpenModal] = useState(false);
+
+  function handleClick() {
+    handleChildClick(title);
+  }
+
   return (
-    <div>
-      <button>{title}</button>
-    </div>
+    <>
+      <button
+        onClick={() => {
+          handleClick();
+          setOpenModal(true);
+          setShowModal(!openModal);
+        }}
+      >
+        {title}
+      </button>
+    </>
   );
 };
 

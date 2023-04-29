@@ -2,8 +2,11 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import User from './User';
 
+
 const Users = () => {
   const [users, setUsers] = useState([]);
+  const [showDropDown, setShowDropDown] = useState(false);
+
   useEffect(() => {
     axios
       .get('http://localhost:3000/users')
@@ -21,13 +24,13 @@ const Users = () => {
   return (
     <>
       {users?.map((data, id) => {
-        console.log
         return (
           <div key={id}>
             <User data={data} />
           </div>
         );
       })}
+      
     </>
   );
 };
