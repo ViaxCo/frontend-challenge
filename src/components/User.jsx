@@ -14,7 +14,7 @@ const User = ({ data }) => {
   return (
     <>
       <div
-        className="box justify-between h-full items-center"
+        className="relative box justify-between h-full items-center"
         onClick={() => setShowDropDown(!showDropDown)}
       >
         <div className="flex items-center h-full">
@@ -36,7 +36,7 @@ const User = ({ data }) => {
           <span>
             <MobileMenu />
             {showDropDown ? (
-              <>
+              <div className="absolute dropdown">
                 <Button
                   setShowModal={setShowModal}
                   title="Deposit"
@@ -45,11 +45,11 @@ const User = ({ data }) => {
                 />
                 <Button
                   setShowModal={setShowModal}
-                  title="Withdrawal"
+                  title="Withdraw"
                   userBalance={walletBalance}
                   handleChildClick={handleChildClick}
                 />
-              </>
+              </div>
             ) : null}
           </span>
         </div>
