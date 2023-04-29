@@ -2,17 +2,28 @@ import React, { useState } from 'react';
 import { ReactComponent as MobileMenu } from '../assets/images/kebab.svg';
 import Button from './Button';
 
-const User = () => {
+const User = ({ data }) => {
+  const {firstName, lastName, walletBalance} = data;
   const [showButtons, setShowButtons] = useState(false);
   const handleClick = () => setShowButtons((toggle) => !toggle);
   return (
-    <div className="box">
-      <div className="box-section">
-        {/* <div className="circle"></div>
-        <h4>Fname Lname</h4> */}
+    <div className="box justify-between h-full items-center">
+      <div className="flex items-center h-full">
+        <div className="">
+          <img
+            src="https://i.ibb.co/wdkxM83/image.png"
+            width="50px"
+            alt="image"
+            border="0"
+          />
+        </div>
+        <h4>
+          {firstName}
+          {lastName}
+        </h4>
       </div>
-      <div className="box-section">
-        {/* <h4>400,000</h4>
+      <div className="flex">
+        <h4>{walletBalance}</h4>
         <span>
           <MobileMenu onClick={handleClick} />
           {showButtons ? (
@@ -20,7 +31,7 @@ const User = () => {
               <Button title="Deposit" /> <Button title="Withdrawal" />
             </>
           ) : null}
-        </span> */}
+        </span>
       </div>
     </div>
   );

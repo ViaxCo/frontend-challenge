@@ -1,13 +1,34 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import User from './User';
 
 const Users = () => {
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    axios
+      .get('http://localhost:3000/users')
+      .then((res) => {
+        setUsers(res.data);
+      })
+      .catch(
+        (err) => {
+          console.log(err);
+        },
+        [users]
+      );
+  });
+
   return (
-    <div>
-      <User />
-      <User />
-      <User />
-    </div>
+    <>
+      {users?.map((data, id) => {
+        console.log
+        return (
+          <div key={id}>
+            <User data={data} />
+          </div>
+        );
+      })}
+    </>
   );
 };
 
