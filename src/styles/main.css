@@ -17,11 +17,33 @@
 }
 
 body {
-  display: flex;
-  justify-content: center;
   background-color: var(--wild-sand);
   margin-top: 200px;
   height: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.align-middle {
+  vertical-align: middle;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .box {
@@ -29,17 +51,17 @@ body {
   padding: 24px;
   display: flex;
   justify-content: space-between;
-  width: 287px;
+
   height: 208px;
   border-radius: 8px;
-  margin-bottom: 24px;
+  margin: 0 auto 24px auto;
   box-shadow: 0px 20px 24px -4px rgba(16, 40, 18, 0.08),
     0px 8px 8px -4px rgba(16, 24, 40, 0.03);
 }
 
 .circle {
   height: 30px;
-  width: 30px;
+
   background-color: var(--wild-sand);
   border-radius: 50%;
 }
@@ -59,7 +81,6 @@ body {
 }
 
 .text-box {
-  width: 456px;
   padding: 10px;
 }
 
@@ -77,12 +98,13 @@ body {
 
   .box {
     background-color: var(--white);
-    padding: 16px;
+    padding: 10px;
     display: flex;
+    width: 95%;
+    border-radius: 8px;
+    margin: 0 auto 24px auto;
     justify-content: space-between;
-    width: 448px;
     height: 72px;
     border-radius: 8px;
-    margin-bottom: 24px;
   }
 }
