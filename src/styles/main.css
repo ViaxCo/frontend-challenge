@@ -41,6 +41,10 @@ body {
   justify-content: space-between;
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
 .align-middle {
   vertical-align: middle;
 }
@@ -68,6 +72,10 @@ body {
   border: 1px solid var(--user-text);
 }
 
+.border-deyork {
+  border: 1px solid var(--deyork);
+}
+
 .mx-auto {
   margin: 0 auto;
 }
@@ -90,6 +98,9 @@ body {
 .ml-1 {
   margin-left: 0.25rem;
 }
+.ml-3 {
+  margin-left: 1rem;
+}
 
 .p-3 {
   padding: 1rem 1.5rem;
@@ -102,8 +113,15 @@ body {
 .bg-deyork {
   background: var(--deyork);
 }
+.bg-white {
+  background: white;
+}
 .text-white {
   color: var(--white);
+}
+
+.text-deyork {
+  color: var(--deyork);
 }
 
 .text-base {
@@ -116,12 +134,25 @@ body {
   line-height: 2rem;
 }
 
+.text-3xl {
+  font-size: 32px;
+  line-height: 2.25rem;
+}
+
 .font-lato {
   font-family: 'Lato', sans-serif;
 }
 
+.font-normal {
+  font-weight: 400;
+}
+
 .font-semibold {
   font-weight: 600;
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 .user {
@@ -135,16 +166,34 @@ body {
 }
 
 .modal {
-  height: 100vh;
   position: absolute;
   top: 0;
   right: 0;
-  left: 0;
+  width: 30%;
   bottom: 0;
   z-index: 4;
-  width: 100vw;
+
   /* padding: 20px 32px; */
   /* background-color: var(--deyork); */
+}
+
+.home-desktop {
+  display: flex;
+  max-width: 1024px;
+  width: 90%;
+
+  margin: 0 auto;
+  padding: 10rem 0;
+}
+
+.amount-container {
+  background: #fff;
+  height: 208px;
+  width: 300px;
+  margin: 0 0 0 200px;
+  box-shadow: 0px 20px 24px -4px rgba(16, 40, 18, 0.08),
+    0px 8px 8px -4px rgba(16, 24, 40, 0.03);
+  border-radius: 10px;
 }
 
 .dropdown {
@@ -171,7 +220,8 @@ body {
 }
 
 .box {
-  background-color: var(--white);
+  display: none;
+  /* background-color: var(--deyork);
   padding: 24px;
   display: flex;
   justify-content: space-between;
@@ -180,7 +230,7 @@ body {
   border-radius: 8px;
   margin: 0 auto 24px auto;
   box-shadow: 0px 20px 24px -4px rgba(16, 40, 18, 0.08),
-    0px 8px 8px -4px rgba(16, 24, 40, 0.03);
+    0px 8px 8px -4px rgba(16, 24, 40, 0.03); */
 }
 
 .circle {
@@ -222,6 +272,12 @@ body {
 }
 
 @media only screen and (orientation: portrait) {
+  .home-desktop {
+    display: none;
+  }
+  .home-mobile {
+    display: block;
+  }
   .box {
     background-color: var(--white);
     padding: 5px 10px;
@@ -236,6 +292,7 @@ body {
   .modal {
     position: absolute;
     top: 0;
+    width: 100%;
     right: 0;
     left: 0;
     bottom: 0;
