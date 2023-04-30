@@ -8,6 +8,7 @@ const User = ({ data }) => {
   const [showDropDown, setShowDropDown] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [action, setAction] = useState('');
+  const [userBalance, setUserBalance] = useState(walletBalance);
 
   const handleChildClick = (string) => setAction(string);
 
