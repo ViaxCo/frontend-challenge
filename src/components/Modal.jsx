@@ -1,13 +1,36 @@
 import { ReactComponent as CloseButton } from '../assets/images/close-button.svg';
+import axios from 'axios';
 import Input from './Input';
 import Button from './Button';
 import { useState } from 'react';
 
 const Modal = ({ action, setShowModal, userData }) => {
+  const [inputValue, setInputValue] = useState(0);
+  const handleUpdateBalance = (e) => {
+    e.preventDefault();
+    const updatedUser = {
+      ...userData,
+      walletBalance:
+        action === 'Deposit'
+          ? Number(userData?.walletBalance) + Number(inputValue)
+          : Number(userData?.walletBalance) - Number(inputValue),
+    };
+
+    axios
+      .put(`http://localhost:3000/users/${userData?.id}`, updatedUser)
+      .then((response) => {
+        console.log(response.data);
+        setShowModal(false);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   const [openModal, setOpenModal] = useState(true);
   return (
     <div className="modal">
-      <div className="w-95 mx-auto my-6">
+      <form onSubmit={handleUpdateBalance} className="w-95 mx-auto my-6">
         <div className="flex justify-between items-center w-full  ">
           <h4 className="text-2xl font-semibold">
             {action}
@@ -19,17 +42,25 @@ const Modal = ({ action, setShowModal, userData }) => {
           <CloseButton onClick={() => setShowModal(!openModal)} />
         </div>
         <div className="input-box">
-          <Input className="w-full" label="Amount" />
+          <div>
+            <h5 className="my-3 font-semibold text-base">Amount</h5>
+            <input
+              value={inputValue}
+              onChange={(event) => setInputValue(event.target.value)}
+              placeholder="Enter deposit amount"
+              className="text-box text-lato text-base border-gray"
+            />
+          </div>
         </div>
         <div className="modal-button">
           <button
             className="bg-deyork text-white text-base p-3 border-none rounded-sm"
-            onClick={() => setShowModal(false)}
+            //onClick={() => setShowModal(false)}
           >
             {action}
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 };
