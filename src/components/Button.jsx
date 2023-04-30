@@ -13,7 +13,7 @@ const Button = ({ title, setShowModal, handleChildClick }) => {
       <button
         onClick={() => {
           handleClick();
-          setOpenModal(true);
+          // setOpenModal(true);
           setShowModal(!openModal);
         }}
       >

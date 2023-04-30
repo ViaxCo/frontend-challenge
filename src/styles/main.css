@@ -177,11 +177,22 @@ body {
   /* background-color: var(--deyork); */
 }
 
+.blur {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
 .home-desktop {
   display: flex;
   max-width: 1024px;
   width: 90%;
-
+  z-index: -1;
   margin: 0 auto;
   padding: 10rem 0;
 }
@@ -277,6 +288,7 @@ body {
   }
   .home-mobile {
     display: block;
+    z-index: -1;
   }
   .box {
     background-color: var(--white);
@@ -294,7 +306,7 @@ body {
     top: 0;
     width: 100%;
     right: 0;
-    left: 0;
+
     bottom: 0;
     z-index: 4;
   }

@@ -57,9 +57,7 @@ const User = ({ data }) => {
       </div>
 
       {showModal ? (
-        <Modal userData={data} action={action} setShowModal={setShowModal}>
-          <p>Modal content goes here.</p>
-        </Modal>
+        <Modal userData={data} action={action} setShowModal={setShowModal} />
       ) : null}
     </>
   );

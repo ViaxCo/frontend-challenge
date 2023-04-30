@@ -5,8 +5,13 @@ import AmountContainer from './AmountContainer';
 import Modal from './Modal';
 
 const Users = () => {
+  const [user, setUser] = useState({});
   const [users, setUsers] = useState([]);
-  const [showDropDown, setShowDropDown] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [action, setAction] = useState('');
+
+  const handleChildClick = (string) => setAction(string);
+
   const [userBalance, setUserBalance] = useState(0);
 
   useEffect(() => {
@@ -14,6 +19,8 @@ const Users = () => {
       .get('http://localhost:3000/users')
       .then(({ data }) => {
         setUsers(data);
+        setUser(data[0]);
+        setUserBalance(data[0]?.walletBalance);
       })
       .catch((err) => {
         console.log(err);
@@ -24,6 +31,7 @@ const Users = () => {
     axios
       .get('http://localhost:3000/users')
       .then(({ data }) => {
+        setUser(data[0]);
         setUserBalance(data[0]?.walletBalance);
       })
       .catch((err) => {
@@ -47,7 +55,10 @@ const Users = () => {
           {users?.map((data, id) => {
             return (
               <div
-                onClick={() => setUserBalance(data?.walletBalance)}
+                onClick={() => {
+                  setUserBalance(data?.walletBalance);
+                  setUser(data);
+                }}
                 className="pointer flex items-center my-3"
                 key={id}
               >
@@ -68,11 +79,17 @@ const Users = () => {
             );
           })}
         </div>
-        <AmountContainer userBalance={userBalance} />
+        <AmountContainer
+          userBalance={userBalance}
+          handleChildClick={handleChildClick}
+          setShowModal={setShowModal}
+        />
 
-        {/* <Modal>
-          <p>Modal content goes here.</p>
-        </Modal> */}
+        {showModal ? (
+          <Modal action={action} userData={user} setShowModal={setShowModal} />
+        ) : (
+          ''
+        )}
       </div>
     </>
   );
