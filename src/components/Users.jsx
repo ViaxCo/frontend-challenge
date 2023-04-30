@@ -14,13 +14,15 @@ const Users = () => {
 
   const [userBalance, setUserBalance] = useState(0);
 
+  function handleWalletChange(newBalance) {
+    setUserBalance(newBalance);
+  }
+
   useEffect(() => {
     axios
       .get('http://localhost:3000/users')
       .then(({ data }) => {
         setUsers(data);
-        setUser(data[0]);
-        setUserBalance(data[0]?.walletBalance);
       })
       .catch((err) => {
         console.log(err);
@@ -86,7 +88,12 @@ const Users = () => {
         />
 
         {showModal ? (
-          <Modal action={action} userData={user} setShowModal={setShowModal} />
+          <Modal
+            action={action}
+            userData={user}
+            handleWalletChange={handleWalletChange}
+            setShowModal={setShowModal}
+          />
         ) : (
           ''
         )}

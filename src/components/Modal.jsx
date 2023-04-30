@@ -4,7 +4,7 @@ import Input from './Input';
 import Button from './Button';
 import { useState } from 'react';
 
-const Modal = ({ action, setShowModal, userData }) => {
+const Modal = ({ action, setShowModal, userData, handleWalletChange }) => {
   const [inputValue, setInputValue] = useState(0);
   const handleUpdateBalance = (e) => {
     e.preventDefault();
@@ -19,7 +19,7 @@ const Modal = ({ action, setShowModal, userData }) => {
     axios
       .put(`http://localhost:3000/users/${userData?.id}`, updatedUser)
       .then((response) => {
-        console.log(response.data);
+        handleWalletChange(response.data.walletBalance);
         setShowModal(false);
       })
       .catch((error) => {
