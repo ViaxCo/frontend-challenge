@@ -8,9 +8,8 @@ const User = ({ data }) => {
   const [showDropDown, setShowDropDown] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [action, setAction] = useState('');
-  const [userBalance, setUserBalance] = useState(walletBalance);
 
-  const handleChildClick = (string) => setAction(string);
+  const handleSelection = (string) => setAction(string);
 
   return (
     <>
@@ -42,13 +41,13 @@ const User = ({ data }) => {
                   setShowModal={setShowModal}
                   title="Deposit"
                   userBalance={walletBalance}
-                  handleChildClick={handleChildClick}
+                  handleSelection={handleSelection}
                 />
                 <Button
                   setShowModal={setShowModal}
                   title="Withdraw"
                   userBalance={walletBalance}
-                  handleChildClick={handleChildClick}
+                  handleSelection={handleSelection}
                 />
               </div>
             ) : null}

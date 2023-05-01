@@ -165,46 +165,16 @@ body {
   color: var(--deyork);
 }
 
-.modal {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 30%;
-  bottom: 0;
-  z-index: 4;
-
-  /* padding: 20px 32px; */
-  /* background-color: var(--deyork); */
-}
-
-.blur {
-  position: fixed;
-  background: rgba(0, 0, 0, 0.1);
-  height: 100vh;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
-}
-
-.home-desktop {
+.box {
+  background-color: var(--white);
+  padding: 5px 10px;
   display: flex;
-  max-width: 1024px;
-  width: 90%;
-  z-index: -1;
-  margin: 0 auto;
-  padding: 10rem 0;
-}
-
-.amount-container {
-  background: #fff;
-  height: 208px;
-  width: 300px;
-  margin: 0 0 0 200px;
-  box-shadow: 0px 20px 24px -4px rgba(16, 40, 18, 0.08),
-    0px 8px 8px -4px rgba(16, 24, 40, 0.03);
-  border-radius: 10px;
+  width: 95%;
+  border-radius: 8px;
+  margin: 0 auto 24px auto;
+  justify-content: space-between;
+  height: 72px;
+  border-radius: 8px;
 }
 
 .dropdown {
@@ -220,46 +190,24 @@ body {
   box-shadow: 0px 20px 24px -4px rgba(16, 40, 18, 0.08),
     0px 8px 8px -4px rgba(16, 24, 40, 0.03);
 }
+
 .dropdown > button {
   background: #fff;
   border: none;
   padding: 8px 10px;
-
   font-weight: 400;
   text-align: left;
   font-family: 'Lato', sans-serif;
 }
 
-.box {
-  display: none;
-  /* background-color: var(--deyork);
-  padding: 24px;
-  display: flex;
-  justify-content: space-between;
-
-  height: 208px;
-  border-radius: 8px;
-  margin: 0 auto 24px auto;
-  box-shadow: 0px 20px 24px -4px rgba(16, 40, 18, 0.08),
-    0px 8px 8px -4px rgba(16, 24, 40, 0.03); */
-}
-
 .circle {
   height: 30px;
-
   background-color: var(--wild-sand);
   border-radius: 50%;
 }
 
 .box-section {
   display: flex;
-}
-
-.modal {
-  height: 100vh;
-  width: screen;
-  /* padding: 20px 32px; */
-  background-color: var(--white);
 }
 
 .input-box {
@@ -283,32 +231,14 @@ body {
 }
 
 @media only screen and (orientation: portrait) {
-  .home-desktop {
-    display: none;
-  }
-  .home-mobile {
-    display: block;
-    z-index: -1;
-  }
-  .box {
-    background-color: var(--white);
-    padding: 5px 10px;
-    display: flex;
-    width: 95%;
-    border-radius: 8px;
-    margin: 0 auto 24px auto;
-    justify-content: space-between;
-    height: 72px;
-    border-radius: 8px;
-  }
   .modal {
     position: absolute;
     top: 0;
     width: 100%;
     right: 0;
-
     bottom: 0;
     z-index: 4;
+    background-color: var(--white);
   }
 
   .modal > * {

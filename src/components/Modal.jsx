@@ -1,11 +1,10 @@
 import { ReactComponent as CloseButton } from '../assets/images/close-button.svg';
 import axios from 'axios';
-import Input from './Input';
-import Button from './Button';
 import { useState } from 'react';
 
-const Modal = ({ action, setShowModal, userData, handleWalletChange }) => {
+const Modal = ({ action, setShowModal, userData }) => {
   const [inputValue, setInputValue] = useState(0);
+  const [openModal] = useState(true);
   const handleUpdateBalance = (e) => {
     e.preventDefault();
     const updatedUser = {
@@ -19,7 +18,6 @@ const Modal = ({ action, setShowModal, userData, handleWalletChange }) => {
     axios
       .put(`http://localhost:3000/users/${userData?.id}`, updatedUser)
       .then((response) => {
-        handleWalletChange(response.data.walletBalance);
         setShowModal(false);
       })
       .catch((error) => {
@@ -27,7 +25,6 @@ const Modal = ({ action, setShowModal, userData, handleWalletChange }) => {
       });
   };
 
-  const [openModal, setOpenModal] = useState(true);
   return (
     <div className="blur">
       <div className="modal">
