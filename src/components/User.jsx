@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ReactComponent as MobileMenu } from '../assets/images/kebab.svg';
-import Button from './Button';
+import SelectButton from './SelectButton';
 import Modal from './Modal';
 
 const User = ({ data }) => {
@@ -37,13 +37,13 @@ const User = ({ data }) => {
             <MobileMenu />
             {showDropDown ? (
               <div className="absolute dropdown">
-                <Button
+                <SelectButton
                   setShowModal={setShowModal}
                   title="Deposit"
                   userBalance={walletBalance}
                   handleSelection={handleSelection}
                 />
-                <Button
+                <SelectButton
                   setShowModal={setShowModal}
                   title="Withdraw"
                   userBalance={walletBalance}

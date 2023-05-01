@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const Button = ({ title, setShowModal, handleSelection }) => {
+const SelectButton = ({ title, setShowModal, handleSelection }) => {
   const [openModal] = useState(false);
 
   const handleSelect = () => handleSelection(title);
@@ -17,4 +17,4 @@ const Button = ({ title, setShowModal, handleSelection }) => {
   );
 };
 
-export default Button;
+export default SelectButton;
