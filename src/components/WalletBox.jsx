@@ -9,7 +9,7 @@ const WalletBox = ({ isSelected, users }) => {
   const [openModal] = useState(false);
   return (
     <>
-      <div className="wallet-box">
+      <div className="hidden md:block wallet-box">
         <p className="mb-3 font-normal">Wallet Balance</p>
         <p className="mb-3 text-2xl text-deyork font-semibold font-lato">
           ₦{walletBalance}

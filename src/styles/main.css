@@ -302,3 +302,22 @@ body {
 .modal > * {
   font-family: 'Lato', sans-serif;
 }
+
+.hidden {
+  display: none;
+}
+@media screen and (min-width: 48em) {
+  .md\:block {
+    display: block;
+  }
+}
+@media screen and (min-width: 48em) {
+  .md\:flex {
+    display: flex;
+  }
+}
+@media screen and (min-width: 48em) {
+  .md\:hidden {
+    display: none;
+  }
+}
