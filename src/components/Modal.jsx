@@ -1,6 +1,6 @@
-import { ReactComponent as CloseButton } from '../assets/images/close-button.svg';
 import axios from 'axios';
 import { useState } from 'react';
+import { ReactComponent as CloseButton } from '../assets/images/close-button.svg';
 
 const Modal = ({ action, setShowModal, userData }) => {
   const [inputValue, setInputValue] = useState(0);
@@ -51,7 +51,7 @@ const Modal = ({ action, setShowModal, userData }) => {
             </div>
           </div>
           <div className="modal-button">
-            <button className="bg-deyork text-white text-base p-3 border-none rounded-sm">
+            <button className="btn btn-deyork" type="submit">
               {action}
             </button>
           </div>

@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
-import { ReactComponent as MobileMenu } from '../assets/images/kebab.svg';
-import SelectButton from './SelectButton';
-import Modal from './Modal';
 
-const User = ({ data }) => {
-  const { firstName, lastName, walletBalance } = data;
+const User = ({ data, isSelected }) => {
+  const { id, firstName, lastName, walletBalance } = data;
   const [showDropDown, setShowDropDown] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [action, setAction] = useState('');
@@ -14,6 +11,21 @@ const User = ({ data }) => {
   return (
     <>
       <div
+        className={`flex items-center p-3 ${
+          isSelected === id ? 'text-active' : 'text-gray'
+        } font-normal`}
+      >
+        <img
+          src="https://i.ibb.co/wdkxM83/image.png"
+          alt="image"
+          width="40px"
+          className="mr-3"
+        />
+        <p>
+          {firstName} {lastName}
+        </p>
+      </div>
+      {/* <div
         className="relative box justify-between h-full items-center"
         onClick={() => setShowDropDown(!showDropDown)}
       >
@@ -57,7 +69,7 @@ const User = ({ data }) => {
 
       {showModal ? (
         <Modal userData={data} action={action} setShowModal={setShowModal} />
-      ) : null}
+      ) : null} */}
     </>
   );
 };
